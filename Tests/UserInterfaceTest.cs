@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
+using UserInterfaceMatskevichM.Utilities;
 
 namespace UserInterfaceMatskevichM.Tests
 {
@@ -16,6 +17,9 @@ namespace UserInterfaceMatskevichM.Tests
             StartPage.nextPageLinkClick();
             int ActualPageNumber = RegistrationCardForm.GetPageNumber();
             Assert.That(ActualPageNumber, Is.EqualTo(1), $"Page number is not {ActualPageNumber}");
+
+            string randomEmail = RandomData.GenerateRandomEmail();
+
         }
     }
 }
